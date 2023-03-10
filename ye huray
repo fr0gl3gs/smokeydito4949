@@ -1,0 +1,31 @@
+if game.PlaceId == (1962086868) or game.PlaceId == (5253186791) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Tower%20Of%20Hell'))()
+elseif game.PlaceId == (155615604) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Prison%20Life'))()
+elseif game.PlaceId == (2537430692) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Jenga!'))()
+elseif game.PlaceId == (7205183370) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Floor%20is%20Lava!'))()
+elseif game.PlaceId == (7029243758) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Pirates%20vs.%20Ninjas'))()
+elseif game.PlaceId == (730951264) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/The%20Maze'))()
+elseif game.PlaceId == (7026828578) then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Speed%20Simulator'))()
+elseif game.PlaceId == (11966456877) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Answer%20or%20Die'))()
+elseif game.PlaceId == (893973440) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Flee%20The%20Facility'))()
+elseif game.PlaceId == (5777099015) or game.PlaceId == (9053673709) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Cheese%20Escape'))()
+elseif game.PlaceId == (11966456877) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Popular%20Answer'))()
+elseif game.PlaceId == (12336036424) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Slasher%20Blade'))()
+elseif game.PlaceId == (8476164859) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Slime%20Survival'))()
+elseif game.PlaceId == (277751860) then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Epic%20Minigames'))()
+else
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Unsupported'))()
+end
