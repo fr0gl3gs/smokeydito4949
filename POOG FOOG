@@ -1,31 +1,586 @@
-if game.PlaceId == (1962086868) or game.PlaceId == (5253186791) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Tower%20Of%20Hell'))()
-elseif game.PlaceId == (155615604) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Prison%20Life'))()
-elseif game.PlaceId == (2537430692) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Jenga!'))()
-elseif game.PlaceId == (7205183370) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Floor%20is%20Lava!'))()
-elseif game.PlaceId == (7029243758) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Pirates%20vs.%20Ninjas'))()
-elseif game.PlaceId == (730951264) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/The%20Maze'))()
-elseif game.PlaceId == (7026828578) then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Speed%20Simulator'))()
-elseif game.PlaceId == (11966456877) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Answer%20or%20Die'))()
-elseif game.PlaceId == (893973440) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Flee%20The%20Facility'))()
-elseif game.PlaceId == (5777099015) or game.PlaceId == (9053673709) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Cheese%20Escape'))()
-elseif game.PlaceId == (11966456877) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Popular%20Answer'))()
-elseif game.PlaceId == (12336036424) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Slasher%20Blade'))()
-elseif game.PlaceId == (8476164859) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Slime%20Survival'))()
-elseif game.PlaceId == (277751860) then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Epic%20Minigames'))()
-else
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/jaeelin/S-Ware/main/Unsupported'))()
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Poog foogs FF2 Sub to Poog Foog for more", "LightTheme")
+
+-- MAIN
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+
+
+
+
+local Visuals = Window:NewTab("Visuals")
+local VisualsSection = Visuals:NewSection("Visuals")
+
+
+
+
+
+MainSection:NewSlider("Walkspeed", "adjust speed", 250, 16, function(s) -- 250 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+
+MainSection:NewSlider("JumpPower", "adjust jump", 250, 50, function(s) -- 250 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+
+MainSection:NewButton("InfiniteJump GUI", "ButtonInfo", function()
+    -- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local InfJumpGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Top = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local InfiniteJump = Instance.new("TextButton")
+local infjumpenabled = false
+--Properties:
+
+InfJumpGui.Name = "InfJumpGui"
+InfJumpGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+InfJumpGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = InfJumpGui
+Main.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+Main.Position = UDim2.new(0.414008319, 0, 0.424691409, 0)
+Main.Size = UDim2.new(0.171983361, 0, 0.0987654254, 0)
+
+Top.Name = "Top"
+Top.Parent = Main
+Top.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Top.BorderSizePixel = 0
+Top.Size = UDim2.new(1, 0, 0.231244698, 0)
+
+TextLabel.Parent = Top
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0.92806381, 0, 1, 0)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "Infinite Jump by Poog Foog"
+TextLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+close.Name = "close"
+close.Parent = Top
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.946004272, 0, 0, 0)
+close.Size = UDim2.new(0.0539956801, 0, 1, 0)
+close.Font = Enum.Font.Code
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(74, 74, 74)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+
+InfiniteJump.Name = "InfiniteJump"
+InfiniteJump.Parent = Main
+InfiniteJump.BackgroundColor3 = Color3.fromRGB(255, 30, 255)
+InfiniteJump.BorderColor3 = Color3.fromRGB(74, 74, 74)
+InfiniteJump.Position = UDim2.new(0.112903222, 0, 0.325633258, 1)
+InfiniteJump.Size = UDim2.new(0.774193406, 0, 0.535669923, 0)
+InfiniteJump.Font = Enum.Font.Code
+InfiniteJump.Text = "Disabled"
+InfiniteJump.TextColor3 = Color3.fromRGB(74, 74, 74)
+InfiniteJump.TextSize = 24.000
+InfiniteJump.TextWrapped = true
+
+-- Scripts:
+
+local function CFFF_fake_script() -- close.LocalScript 
+	local script = Instance.new('LocalScript', close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local frame = script.Parent.Parent.Parent
+		frame:TweenPosition(UDim2.new(0.4, 0,1.5, 0))
+		infjumpenabled = false
+		wait(1)
+		frame.Parent:Destroy()
+	end)
 end
+coroutine.wrap(CFFF_fake_script)()
+local function VESU_fake_script() -- InfiniteJump.EnableDisableInfJump 
+	local script = Instance.new('LocalScript', InfiniteJump)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if infjumpenabled == false then
+			infjumpenabled = true
+			script.Parent.Text = "Enabled"
+		elseif infjumpenabled == true then
+			infjumpenabled = false
+			script.Parent.Text = "Disabled"
+		end
+	end)
+end
+coroutine.wrap(VESU_fake_script)()
+local function GSJXM_fake_script() -- Main.Draggable 
+	local script = Instance.new('LocalScript', Main)
+
+	local Frame = script.Parent
+	Frame.Selectable = true
+	Frame.Active = true
+	Frame.Draggable = true
+end
+coroutine.wrap(GSJXM_fake_script)()
+local function MZUWYOR_fake_script() -- Main.Opening 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Position = UDim2.new(0.33, 0,2, 0)
+	script.Parent:TweenPosition(UDim2.new(0.33, 0,0.3, 0))
+end
+coroutine.wrap(MZUWYOR_fake_script)()
+local function HLKTLMK_fake_script() -- Main.infjumpscript 
+	local script = Instance.new('LocalScript', Main)
+
+	game:GetService("UserInputService").JumpRequest:Connect(function()
+		if infjumpenabled == true then
+			game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState("Jumping")
+		end
+	end)
+end
+coroutine.wrap(HLKTLMK_fake_script)()
+end)
+
+
+
+VisualsSection:NewButton("Aimbot", "ButtonInfo", function()
+    local dwCamera = workspace.CurrentCamera
+    local dwRunService = game:GetService("RunService")
+    local dwUIS = game:GetService("UserInputService")
+    local dwEntities = game:GetService("Players")
+    local dwLocalPlayer = dwEntities.LocalPlayer
+    local dwMouse = dwLocalPlayer:GetMouse()
+    
+    local settings = {
+        Aimbot = true,
+        Aiming = false,
+        Aimbot_AimPart = "Head",
+        Aimbot_TeamCheck = true,
+        Aimbot_Draw_FOV = true,
+        Aimbot_FOV_Radius = 200,
+        Aimbot_FOV_Color = Color3.fromRGB(255,0,255)
+    }
+    
+    local fovcircle = Drawing.new("Circle")
+    fovcircle.Visible = settings.Aimbot_Draw_FOV
+    fovcircle.Radius = settings.Aimbot_FOV_Radius
+    fovcircle.Color = settings.Aimbot_FOV_Color
+    fovcircle.Thickness = 2
+    fovcircle.Filled = false
+    fovcircle.Transparency = .5
+    
+    fovcircle.Position = Vector2.new(dwCamera.ViewportSize.X / 2, dwCamera.ViewportSize.Y / 2)
+    
+    dwUIS.InputBegan:Connect(function(i)
+        if i.UserInputType == Enum.UserInputType.MouseButton2 then
+            settings.Aiming = true
+        end
+    end)
+    
+    dwUIS.InputEnded:Connect(function(i)
+        if i.UserInputType == Enum.UserInputType.MouseButton2 then
+            settings.Aiming = false
+        end
+    end)
+    
+    dwRunService.RenderStepped:Connect(function()
+        
+        local dist = math.huge
+        local closest_char = nil
+    
+        if settings.Aiming then
+    
+            for i,v in next, dwEntities:GetChildren() do 
+    
+                if v ~= dwLocalPlayer and
+                v.Character and
+                v.Character:FindFirstChild("HumanoidRootPart") and
+                v.Character:FindFirstChild("Humanoid") and
+                v.Character:FindFirstChild("Humanoid").Health > 0 then
+    
+                    if settings.Aimbot_TeamCheck == true and
+                    v.Team ~= dwLocalPlayer.Team or
+                    settings.Aimbot_TeamCheck == false then
+    
+                        local char = v.Character
+                        local char_part_pos, is_onscreen = dwCamera:WorldToViewportPoint(char[settings.Aimbot_AimPart].Position)
+    
+                        if is_onscreen then
+    
+                            local mag = (Vector2.new(dwMouse.X, dwMouse.Y) - Vector2.new(char_part_pos.X, char_part_pos.Y)).Magnitude
+    
+                            if mag < dist and mag < settings.Aimbot_FOV_Radius then
+    
+                                dist = mag
+                                closest_char = char
+    
+                            end
+                        end
+                    end
+                end
+            end
+    
+            if closest_char ~= nil and
+            closest_char:FindFirstChild("HumanoidRootPart") and
+            closest_char:FindFirstChild("Humanoid") and
+            closest_char:FindFirstChild("Humanoid").Health > 0 then
+    
+                dwCamera.CFrame = CFrame.new(dwCamera.CFrame.Position, closest_char[settings.Aimbot_AimPart].Position)
+            end
+        end
+    end)
+end)
+
+
+
+
+
+
+
+VisualsSection:NewButton("Tracers", "ButtonInfo", function()
+    _G.TeamCheck = false
+    _G.Tracers = true
+    --// local shit stuff i guess \\--
+    local lp = game.Players.LocalPlayer
+    local camera = game:GetService("Workspace").CurrentCamera
+    local CurrentCamera = workspace.CurrentCamera
+    local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+    for i,v in pairs(game.Players:GetChildren()) do
+        local Tracer = Drawing.new("Line")
+        Tracer.Visible = false
+        Tracer.Color = Color3.new(255,0,255)
+        Tracer.Thickness = 2
+        Tracer.Transparency = 1
+        
+        function traces()
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lp and v.Character.Humanoid.Health > 0 then
+                    local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                    
+                    if OnScreen then
+                        Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 2)
+                        Tracer.To = Vector2.new(Vector.X, Vector.Y)
+                        
+                        if _G.TeamCheck and v.TeamColor == lp.TeamColor then
+                            Tracer.Visible = false
+                        else
+                            Tracer.Visible = true
+                        end
+                    else
+                        Tracer.Visible = false
+                    end
+                else
+                    Tracer.Visible = false
+                end
+                if _G.Tracers == false then
+                    Tracers.Visible = false
+                end
+            end)
+        end
+        coroutine.wrap(traces)()
+    end
+    game.Players.PlayerAdded:Connect(function()
+        local Tracer = Drawing.new("Line")
+        Tracer.Visible = false
+        Tracer.Color = Color3.new(255,0,0)
+        Tracer.Thickness = 2
+        Tracer.Transparency = 2
+        
+        function traces()
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lp and v.Character.Humanoid.Health > 0 then
+                    local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                    if OnScreen then
+                        Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 2)
+                        Tracer.To = Vector2.new(Vector.X, Vector.Y)
+                        
+                        if _G.TeamCheck and v.TeamColor == lp.TeamColor then
+                            Tracer.Visible = false
+                        else
+                            Tracer.Visible = true
+                        end
+                    else
+                        Tracer.Visible = false
+                    end
+                else
+                    Tracer.Visible = false
+                end
+                if _G.Tracers == false then
+                    Tracers.Visible = false
+                end
+            end)
+        end
+        coroutine.wrap(traces)()
+    end)
+end)
+
+
+
+
+
+
+
+
+VisualsSection:NewButton("ESP", "ButtonInfo", function()
+    game:GetService("StarterGui"):SetCore("SendNotification",{ 	
+        Title = "Made By:",  	
+        Text = "Poog Foog",
+            Icon = "rbxthumb://type=Asset&id=9863339777&w=150&h=150",
+            Duration = 20
+        })
+        
+        --// Setting \\--
+        local settings = {
+           defaultcolor = Color3.fromRGB(255,0,255),
+           teamcheck = false, -- when true it wont show the esp box in your teammate
+           teamcolor = true, -- if false then default color(white)
+        };
+        
+        --// Service \\--
+        local runService = game:GetService("RunService");
+        local players = game:GetService("Players");
+        
+        --// Variable \\--
+        local localPlayer = players.LocalPlayer;
+        local camera = workspace.CurrentCamera;
+        
+        --// Function \\--
+        local newVector2, newColor3, newDrawing = Vector2.new, Color3.new, Drawing.new;
+        local tan, rad = math.tan, math.rad;
+        local round = function(...) local a = {}; for i,v in next, table.pack(...) do a[i] = math.round(v); end return unpack(a); end;
+        local wtvp = function(...) local a, b = camera.WorldToViewportPoint(camera, ...) return newVector2(a.X, a.Y), b, a.Z end;
+        
+        local espCache = {};
+        local function createEsp(player)
+           local drawings = {};
+           
+           drawings.box = newDrawing("Square");
+           drawings.box.Thickness = 1;
+           drawings.box.Filled = false;
+           drawings.box.Color = settings.defaultcolor;
+           drawings.box.Visible = false;
+           drawings.box.ZIndex = 2;
+        
+           drawings.boxoutline = newDrawing("Square");
+           drawings.boxoutline.Thickness = 4;
+           drawings.boxoutline.Filled = false;
+           drawings.boxoutline.Color = newColor3();
+           drawings.boxoutline.Visible = false;
+           drawings.boxoutline.ZIndex = 0.5;
+        
+           espCache[player] = drawings;
+        end
+        
+        local function removeEsp(player)
+           if rawget(espCache, player) then
+               for _, drawing in next, espCache[player] do
+                   drawing:Remove();
+               end
+               espCache[player] = nil;
+           end
+        end
+        
+        local function updateEsp(player, esp)
+           local character = player and player.Character;
+           if character then
+               local cframe = character:GetModelCFrame();
+               local position, visible, depth = wtvp(cframe.Position);
+               esp.box.Visible = visible;
+               esp.boxoutline.Visible = visible;
+        
+               if cframe and visible then
+                   local scaleFactor = 1 / (depth * tan(rad(camera.FieldOfView / 2)) * 2) * 1000;
+                   local width, height = round(4 * scaleFactor, 5 * scaleFactor);
+                   local x, y = round(position.X, position.Y);
+        
+                   esp.box.Size = newVector2(width, height);
+                   esp.box.Position = newVector2(round(x - width / 2, y - height / 2));
+                   esp.box.Color = settings.teamcolor and player.TeamColor.Color or settings.defaultcolor;
+        
+                   esp.boxoutline.Size = esp.box.Size;
+                   esp.boxoutline.Position = esp.box.Position;
+               end
+           else
+               esp.box.Visible = false;
+               esp.boxoutline.Visible = false;
+           end
+        end
+        
+        --// Main \\--
+        for _, player in next, players:GetPlayers() do
+           if player ~= localPlayer then
+               createEsp(player);
+           end
+        end
+        
+        players.PlayerAdded:Connect(function(player)
+           createEsp(player);
+        end);
+        
+        players.PlayerRemoving:Connect(function(player)
+           removeEsp(player);
+        end)
+        
+        runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
+           for player, drawings in next, espCache do
+               if settings.teamcheck and player.Team == localPlayer.Team then
+                   continue;
+               end
+                    
+               if drawings and player ~= localPlayer then
+                   updateEsp(player, drawings);
+               end
+           end
+        end)
+end)
+
+
+
+
+
+
+
+VisualsSection:NewButton("Skeletons", "ButtonInfo", function()
+    game:GetService("StarterGui"):SetCore("SendNotification",{ 	
+        Title = "Made By:",  	
+        Text = "Poog Foog",
+            Icon = "rbxthumb://type=Asset&id=9863339777&w=150&h=150",
+            Duration = 20
+        })
+        
+        local camera = workspace.CurrentCamera
+        local entities = game:GetService("Players")
+        local localplayer = entities.LocalPlayer 
+        local runservice = game:GetService("RunService")
+        --// Setting \\-- 
+        local esp_settings = {
+            enabled = true,
+            skel = true,
+            skel_col = Color3.fromRGB(204,0,0)
+        }
+        local function draw(player, character)
+            -- Head
+            local skel_head = Drawing.new("Line")
+            skel_head.Visible = false
+            skel_head.Thickness = 2
+            skel_head.Color = Color3.new(255,255,255)
+            -- Torso
+            local skel_torso = Drawing.new("Line")
+            skel_torso.Visible = false
+            skel_torso.Thickness = 2
+            skel_torso.Color = Color3.new(255,255,255)
+            -- LeftArm
+            local skel_leftarm = Drawing.new("Line")
+            skel_leftarm.Visible = false
+            skel_leftarm.Thickness = 2
+            skel_leftarm.Color = Color3.new(255,255,255)
+            -- RightArm
+            local skel_rightarm = Drawing.new("Line")
+            skel_rightarm.Visible = false
+            skel_rightarm.Thickness = 2
+            skel_rightarm.Color = Color3.new(255,255,255)
+            -- LeftLeg
+            local skel_leftleg = Drawing.new("Line")
+            skel_leftleg.Visible = false
+            skel_leftleg.Thickness = 2
+            skel_leftleg.Color = Color3.new(255,255,255)
+            -- RightLeg
+            local skel_rightleg = Drawing.new("Line")
+            skel_rightleg.Visible = false
+            skel_rightleg.Thickness = 2
+            skel_rightleg.Color = Color3.new(255,255,255)
+            local function update()
+                local connection
+                connection = runservice.RenderStepped:Connect(function()
+                    if workspace:FindFirstChild(character.Name) and
+                    character and 
+                    character:FindFirstChild("HumanoidRootPart") and 
+                    character:FindFirstChild("Humanoid") and 
+                    character:FindFirstChild("Humanoid").Health ~= 0 then 
+                        local character_rootpart_3d = character.HumanoidRootPart.Position
+                        local character_rootpart_2d, rootpart_onscreen = camera:WorldToViewportPoint(character_rootpart_3d)
+                        if rootpart_onscreen and character.Humanoid.RigType == Enum.HumanoidRigType.R6 and esp_settings.enabled then
+                            local head_2d = camera:WorldToViewportPoint(character.Head.Position)
+                                
+                            local torso_upper_2d = camera:WorldToViewportPoint(character.Torso.Position + Vector3.new(0,1,0))
+                            local torso_lower_2d = camera:WorldToViewportPoint(character.Torso.Position + Vector3.new(0,-1,0))
+                          
+                            local leftarm_2d = camera:WorldToViewportPoint(character["Left Arm"].Position + Vector3.new(0,-1,0))
+                            local rightarm_2d = camera:WorldToViewportPoint(character["Right Arm"].Position + Vector3.new(0,-1,0))
+                            local leftleg_2d = camera:WorldToViewportPoint(character["Left Leg"].Position + Vector3.new(0,-1,0))
+                            local rightleg_2d = camera:WorldToViewportPoint(character["Right Leg"].Position + Vector3.new(0,-1,0))
+                                
+                            skel_head.From = Vector2.new(head_2d.X, head_2d.Y)
+                            skel_head.To = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+        
+                            skel_torso.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                            skel_torso.To = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                            
+                            skel_leftarm.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                            skel_leftarm.To = Vector2.new(leftarm_2d.X, leftarm_2d.Y)
+        
+                            skel_rightarm.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                            skel_rightarm.To = Vector2.new(rightarm_2d.X, rightarm_2d.Y)
+        
+                            skel_leftleg.From = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                            skel_leftleg.To = Vector2.new(leftleg_2d.X, leftleg_2d.Y)
+        
+                            skel_rightleg.From = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                            skel_rightleg.To = Vector2.new(rightleg_2d.X, rightleg_2d.Y)
+        
+                            skel_head.Visible = esp_settings.skel
+                            skel_torso.Visible = esp_settings.skel
+                            skel_leftarm.Visible = esp_settings.skel
+                            skel_rightarm.Visible = esp_settings.skel
+                            skel_leftleg.Visible = esp_settings.skel
+                            skel_rightleg.Visible = esp_settings.skel
+                        else
+                            skel_head.Visible = false
+                            skel_torso.Visible = false
+                            skel_leftarm.Visible = false
+                            skel_rightarm.Visible = false
+                            skel_leftleg.Visible = false
+                            skel_rightleg.Visible = false
+                        end
+                    else
+                        if player == nil then
+                            connection:Disconnect()
+                            connection = nil 
+                        end
+                        skel_head.Visible = false
+                        skel_torso.Visible = false
+                        skel_leftarm.Visible = false
+                        skel_rightarm.Visible = false
+                        skel_leftleg.Visible = false
+                        skel_rightleg.Visible = false
+                    end
+                end)
+            end
+            coroutine.wrap(update)()
+        end
+        local function playeradded(player)
+            if player.Character then
+                coroutine.wrap(draw)(player, player.Character)
+            end
+            player.CharacterAdded:Connect(function(character)
+                coroutine.wrap(draw)(player, character)
+            end)
+        end
+        for a,b in next, entities:GetPlayers() do
+            if b ~= localplayer then
+                playeradded(b)
+            end
+        end
+        entities.PlayerAdded:Connect(playeradded)
+end)
