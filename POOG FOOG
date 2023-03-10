@@ -1,6 +1,6 @@
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Poog foogs FF2 Sub to Poog Foog for more", "LightTheme")
+local Window = Library.CreateLib("Universal GUI Poog Foog on YT", "LightTheme")
 
 -- MAIN
 local Player = Window:NewTab("Player")
@@ -16,19 +16,19 @@ local VisualsSection = Visuals:NewSection("Visuals")
 
 
 
-MainSection:NewSlider("Walkspeed", "adjust speed", 250, 16, function(s) -- 250 (MaxValue) | 16 (MinValue)
+PlayerSection:NewSlider("Walkspeed", "adjust speed", 250, 16, function(s) -- 250 (MaxValue) | 16 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
 
 
-MainSection:NewSlider("JumpPower", "adjust jump", 250, 50, function(s) -- 250 (MaxValue) | 50 (MinValue)
+PlayerSection:NewSlider("JumpPower", "adjust jump", 250, 50, function(s) -- 250 (MaxValue) | 50 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
 
 
-MainSection:NewButton("InfiniteJump GUI", "ButtonInfo", function()
+PlayerSection:NewButton("InfiniteJump GUI", "ButtonInfo", function()
     -- Gui to Lua
 -- Version: 3.2
 
@@ -584,3 +584,27 @@ VisualsSection:NewButton("Skeletons", "ButtonInfo", function()
         end
         entities.PlayerAdded:Connect(playeradded)
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+
+
+
